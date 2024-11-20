@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Listado de Clientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="listado-card">
+    <div class="botones-acciones">
+      <ion-button color="success" routerLink="/createCustomer">Crear Cliente</ion-button>
+      <ion-button color="secondary" routerLink="/menu">Menú</ion-button>
+    </div>
+    <ion-card-content>
+      <table class="responsive-table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customers">
+            <td>{{ customer.id }}</td>
+            <td>{{ customer.lastName }}</td>
+            <td>{{ customer.email }}</td>
+            <td>{{ customer.phone }}</td>
+            <td>
+              <ion-button fill="clear" size="small" color="tertiary" routerLink="/detailCustomer/{{customer.id}}">Ver</ion-button>
+              <ion-button fill="clear" size="small" color="warning" routerLink="/updateCustomer/{{customer.id}}">Actualizar</ion-button>
+              <ion-button fill="clear" color="danger" (click)="deleteCustomer(customer.id)">Eliminar</ion-button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

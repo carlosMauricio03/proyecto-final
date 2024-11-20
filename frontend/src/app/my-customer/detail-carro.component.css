@@ -1,0 +1,27 @@
+.restaurant-theme {
+    background-size: cover;
+    color: #fff;
+  }
+  
+  .form-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .card-header {
+    background-color: #ff6f61;
+    color: white;
+    padding: 20px;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .icon-center {
+    display: block;
+    margin: 10px auto;
+    color: white;
+  }
+  
+  ion-card {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  

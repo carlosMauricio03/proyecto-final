@@ -1,0 +1,40 @@
+<ion-content class="ion-padding restaurant-theme">
+  <div class="form-container">
+    <ion-card>
+      <ion-card-header class="card-header ion-text-center">
+        <ion-title>Actualizar Cliente</ion-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <form (ngSubmit)="updateCustomer()">
+          <ion-list>
+            <ion-item>
+              <ion-label position="stacked"><b>Apellido</b></ion-label>
+              <ion-input [(ngModel)]="customer.lastName" name="lastName" type="text" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked"><b>Correo Electrónico</b></ion-label>
+              <ion-input [(ngModel)]="customer.email" name="email" type="email" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked"><b>Teléfono</b></ion-label>
+              <ion-input [(ngModel)]="customer.phone" name="phone" type="tel" required></ion-input>
+            </ion-item>
+          </ion-list>
+
+          <div class="button-group">
+            <ion-button type="submit" color="success" expand="block">
+              <ion-icon slot="start" name="save"></ion-icon> 
+            </ion-button>
+
+            <ion-button color="primary" expand="block" routerLink="/customers">
+              <ion-icon slot="start" name="arrow-back"></ion-icon> 
+            </ion-button>
+          </div>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Listado de Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="listado-card">
+    <div class="botones-acciones">
+      <ion-button color="success" routerLink="/createProduct">Crear Producto</ion-button>
+      <ion-button color="secondary" routerLink="/menu">Menú</ion-button>
+    </div>
+    <ion-card-content>
+      <table class="responsive-table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Descuento</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.price | currency }}</td>
+            <td>{{ product.discountPercentage ? product.discountPercentage + '%' : 'N/A' }}</td>
+            <td>
+              <ion-button fill="clear" size="small" color="tertiary" routerLink="/detailProduct/{{product.id}}">Ver</ion-button>
+              <ion-button fill="clear" size="small" color="warning" routerLink="/updateProduct/{{product.id}}">Actualizar</ion-button>
+              <ion-button fill="clear" color="danger" (click)="deleteProduct(product.id)">Eliminar</ion-button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

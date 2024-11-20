@@ -1,0 +1,98 @@
+/* Encabezado */
+ion-header {
+  --background: #4caf50;
+  --color: #fff;
+}
+
+ion-title {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Fondo general */
+ion-content {
+  --background: #f9f9f9;
+  padding: 20px;
+}
+
+/* Card */
+.listado-card {
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Botones de acción */
+.botones-acciones {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Tabla */
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.responsive-table th,
+.responsive-table td {
+  border: 1px solid #000; /* Borde negro simple */
+  padding: 12px;
+  text-align: left;
+}
+
+.responsive-table th {
+  background-color: #4caf50;
+  color: white;
+}
+
+.responsive-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.responsive-table tr:hover {
+  background-color: #e9e9e9;
+}
+
+/* Botones dentro de la tabla */
+.responsive-table td ion-button {
+  margin: 0 5px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .responsive-table {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .responsive-table thead {
+    display: none;
+  }
+
+  .responsive-table, .responsive-table tbody, .responsive-table tr, .responsive-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .responsive-table tr {
+    margin-bottom: 15px;
+  }
+
+  .responsive-table td {
+    text-align: left;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .responsive-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+}

@@ -1,0 +1,83 @@
+/* Encabezado */
+ion-header {
+  --background: #4caf50; /* Color verde para el encabezado */
+  --color: #fff;
+}
+
+ion-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* Contenido principal */
+ion-content {
+  --background: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 15px;
+}
+
+/* Contenedor principal del menú */
+.menu-container {
+  width: 100%;
+  max-width: 500px; /* Tamaño máximo del menú */
+  margin: 0 auto;
+}
+
+/* Card individual */
+ion-card {
+  --background: #fff;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Espacio entre cards */
+  padding: 10px;
+}
+
+/* Títulos dentro de las cards */
+ion-card-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Botones dentro del menú */
+ion-button {
+  --color: #ffffff;
+  --border-radius: 4px;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 10px 15px;
+}
+
+/* Botones con colores específicos */
+ion-button[color="success"] {
+  --background: #4caf50;
+}
+
+ion-button[color="tertiary"] {
+  --background: #607d8b;
+}
+
+ion-button[expand="block"] {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Responsive para pantallas más pequeñas */
+@media screen and (max-width: 600px) {
+  .menu-container {
+    width: 90%; /* Menú más pequeño en dispositivos móviles */
+  }
+
+  ion-card-title {
+    font-size: 18px;
+  }
+
+  ion-button {
+    padding: 8px 12px; /* Ajuste de tamaño de botones en móviles */
+  }
+}

@@ -1,0 +1,39 @@
+<ion-content class="ion-padding restaurant-theme">
+  <div class="form-container">
+    <ion-card>
+      <ion-card-header class="card-header ion-text-center">
+        <ion-title>Detalles del Producto</ion-title>
+        <ion-icon name="fast-food-outline" size="large" class="icon-center"></ion-icon>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label><b>Nombre:</b></ion-label>
+            <ion-label>{{ product.name }}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label><b>Descripción:</b></ion-label>
+            <ion-label>{{ product.description || 'No disponible' }}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label><b>Precio:</b></ion-label>
+            <ion-label>${{ product.price | number:'1.2-2' }}</ion-label>
+          </ion-item>
+          <ion-item *ngIf="product.discountPercentage">
+            <ion-label><b>Descuento:</b></ion-label>
+            <ion-label>{{ product.discountPercentage }}%</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label><b>Precio con descuento:</b></ion-label>
+            <ion-label>${{ product.discountedPrice | number:'1.2-2' }}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+
+      <ion-button color="primary" expand="full" routerLink="/products">
+        <ion-icon name="return-down-back-outline"></ion-icon>
+      </ion-button>
+    </ion-card>
+  </div>
+</ion-content>

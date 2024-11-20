@@ -1,0 +1,85 @@
+<ion-content class="ion-padding restaurant-theme">
+  <div class="form-container">
+    <ion-card class="form-card">
+      <ion-card-header>
+        <ion-title class="text-center">Crear Producto</ion-title>
+        <ion-icon name="basket-outline" size="large" class="icon-center"></ion-icon>
+      </ion-card-header>
+
+      <ion-card-content>
+        <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+          <ion-list>
+            <!-- Campo Nombre del Producto -->
+            <ion-item lines="full">
+              <ion-input 
+                labelPlacement="floating" 
+                type="text" 
+                id="name" 
+                name="name" 
+                autocomplete="off" 
+                required 
+                [(ngModel)]="name">
+                <div slot="label">Nombre del Producto: <ion-text color="danger">(Requerido)</ion-text></div>
+              </ion-input>
+            </ion-item>
+
+            <!-- Campo Descripción -->
+            <ion-item lines="full">
+              <ion-input 
+                labelPlacement="floating" 
+                type="text" 
+                id="description" 
+                name="description" 
+                autocomplete="off" 
+                [(ngModel)]="description">
+                <div slot="label">Descripción:</div>
+              </ion-input>
+            </ion-item>
+
+            <!-- Campo Precio -->
+            <ion-item lines="full">
+              <ion-input 
+                labelPlacement="floating" 
+                type="number" 
+                id="price" 
+                name="price" 
+                autocomplete="off" 
+                required 
+                [(ngModel)]="price">
+                <div slot="label">Precio: <ion-text color="danger">(Requerido)</ion-text></div>
+              </ion-input>
+            </ion-item>
+
+            <!-- Campo Descuento -->
+            <ion-item lines="full">
+              <ion-input 
+                labelPlacement="floating" 
+                type="number" 
+                id="discountPercentage" 
+                name="discountPercentage" 
+                autocomplete="off" 
+                [(ngModel)]="discountPercentage">
+                <div slot="label">Descuento (%)</div>
+              </ion-input>
+            </ion-item>
+          </ion-list>
+
+          <!-- Botón Guardar -->
+          <button 
+            class="btn btn-success w-100" 
+            [disabled]="!f.valid">
+            <ion-icon name="save-outline"></ion-icon> 
+          </button>
+
+          <!-- Botón Volver -->
+          <ion-button 
+            color="primary" 
+            expand="full" 
+            routerLink="/products">
+            <ion-icon name="return-down-back-outline"></ion-icon> 
+          </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

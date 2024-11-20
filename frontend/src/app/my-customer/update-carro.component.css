@@ -1,0 +1,19 @@
+.restaurant-theme {
+    --background: #fff8e1; /* Color crema */
+  }
+  
+  .form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .card-header {
+    background-color: #8d6e63; /* Marrón cálido */
+    color: #fff;
+  }
+  
+  .button-group ion-button {
+    margin-top: 1rem;
+  }
+  

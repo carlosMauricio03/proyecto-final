@@ -1,0 +1,73 @@
+<ion-content class="ion-padding restaurant-theme">
+  <div class="form-container">
+    <ion-card class="form-card">
+      <ion-card-header>
+        <ion-title class="text-center">Crear Cliente</ion-title>
+        <ion-icon name="restaurant-outline" size="large" class="icon-center"></ion-icon>
+      </ion-card-header>
+
+      <ion-card-content>
+        <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+          <ion-list>
+            <!-- Campo Apellido -->
+            <ion-item lines="full">
+              <ion-input 
+                labelPlacement="floating" 
+                type="text" 
+                id="lastName" 
+                name="lastName" 
+                autocomplete="off" 
+                required 
+                [(ngModel)]="lastName">
+                <div slot="label">Apellido: <ion-text color="danger">(Requerido)</ion-text></div>
+              </ion-input>
+            </ion-item>
+
+            <!-- Campo Email -->
+            <ion-item lines="full">
+              <ion-input 
+                labelPlacement="floating" 
+                type="email" 
+                id="email" 
+                name="email" 
+                autocomplete="off" 
+                required 
+                [(ngModel)]="email">
+                <div slot="label">Correo: <ion-text color="danger">(Requerido)</ion-text></div>
+              </ion-input>
+            </ion-item>
+
+            <!-- Campo Teléfono -->
+            <ion-item lines="full">
+              <ion-input 
+                labelPlacement="floating" 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                autocomplete="off" 
+                required 
+                [(ngModel)]="phone">
+                <div slot="label">Teléfono: <ion-text color="danger">(Requerido)</ion-text></div>
+              </ion-input>
+            </ion-item>
+          </ion-list>
+
+          <!-- Botón Guardar -->
+          <button 
+            class="btn btn-success w-100" 
+            [disabled]="!f.valid">
+            <ion-icon name="save-outline"></ion-icon> 
+          </button>
+
+          <!-- Botón Volver -->
+          <ion-button 
+            color="primary" 
+            expand="full" 
+            routerLink="/customers">
+            <ion-icon name="return-down-back-outline"></ion-icon> 
+          </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
